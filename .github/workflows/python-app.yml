@@ -1,0 +1,32 @@
+name: gpt_v2
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run code style checks
+      run: |
+        flake8 src/  # 確保代碼風格符合 flake8
+        black --check src/  # 確認代碼符合 black 格式
+
+    - name: Run tests
+      run: |
+        pytest

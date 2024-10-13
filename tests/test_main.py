@@ -1,7 +1,7 @@
 # tests/test_main.py
 import unittest
 from unittest.mock import patch
-from src.main import main
+from gpt_v2.main import main
 
 
 class TestMainFunction(unittest.TestCase):

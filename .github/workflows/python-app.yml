@@ -28,5 +28,7 @@ jobs:
         black --check src/  # 確認代碼符合 black 格式
 
     - name: Run tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}/gpt_v2  # 設定 PYTHONPATH 指向 src 目錄
       run: |
         pytest

@@ -1,5 +1,4 @@
 # src/main.py
-
 def main():
     user_input = input("Enter a command: ")
     if user_input == "exit":

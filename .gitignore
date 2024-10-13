@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .venv/
 .env
+temp.md
+gpt_v2.egg-info
+.pytest_cache
